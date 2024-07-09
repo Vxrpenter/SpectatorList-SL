@@ -1,4 +1,4 @@
-# Spectator List (EXILED) ![Downloads](https://img.shields.io/github/downloads/Misfiy/SpectatorList-SL/total)
+# Spectator List (EXILED)
 
 > [!CAUTION]
 > This project is a modified version of the original that at this moment is only compatible with one server. I will try to improve on this and change it up
