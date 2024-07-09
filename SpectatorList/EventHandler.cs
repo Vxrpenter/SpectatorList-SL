@@ -53,23 +53,24 @@ public class EventHandler
                     
                     foreach (var spectator in player.CurrentSpectatingPlayers.Where(p => p.Role != RoleTypeId.Overwatch))
                     {
+                        Log.Info(spectator.GroupName);
                         var Role = "";
                         if (spectator.GroupName.Contains("owner"))
-                            Role = "<color=red>" + "⌠Owner⌡</color> - "+ spectator.CustomName;
+                            Role = "⌠<color=#C50000>Owner</color>⌡ "+ spectator.CustomName;
                         if (spectator.GroupName.Contains("admin")) 
-                            Role = "<color=red>" + "⌠Admin⌡</color> - "+ spectator.CustomName;
+                            Role = "⌠<color=#C50000>Admin</color>⌡ "+ spectator.CustomName;
                         if (spectator.GroupName.Contains("teamleitung")) 
-                            Role = "<color=pumpkin>" + "⌠Teamleitung⌡</color> - "+ spectator.CustomName;
+                            Role = "⌠<color=#EE7600>Teamleitung</color>⌡ "+ spectator.CustomName;
                         if (spectator.GroupName.Contains("communitymanager")) 
-                            Role = "<color=yellow>" + "⌠Communitymanager⌡</color> - "+ spectator.CustomName;
+                            Role = "⌠<color=#FAFF86>Communitymanager</color>⌡ "+ spectator.CustomName;
                         if (spectator.GroupName.Contains("moderator")) 
-                            Role = "<color=cyan>" + "⌠Moderator⌡</color> - "+ spectator.CustomName;
+                            Role = "⌠<color=#00B7EB>Moderator⌡</color> "+ spectator.CustomName;
                         if (spectator.GroupName.Contains("senior_supporter")) 
-                            Role = "<color=green>" + "⌠Senior Supporter⌡</color> - "+ spectator.CustomName;
-                        if (spectator.GroupName.Contains("supporter")) 
-                            Role = "<color=green>" + "⌠Supporter⌡</color> - "+ spectator.CustomName;
+                            Role = "⌠<color=#228B22>Senior Supporter⌡ "+ spectator.CustomName;
+                        if (spectator.GroupName.Contains("supporter") && !spectator.GroupName.Contains("senior_supporter")) 
+                            Role = "⌠<color=#228B22>Supporter⌡</color> "+ spectator.CustomName;
                         if (spectator.GroupName.Contains("junior_supporter")) 
-                            Role = "<color=green>" + "⌠Junior Supporter⌡</color> - "+ spectator.CustomName;
+                            Role = "⌠<color=#228B22>Junior Supporter⌡</color> "+ spectator.CustomName;
                         
                         if (staff.Contains("0"+spectator.GroupName.Split(".")[0].Replace("0", "")))
                         {
